@@ -1,0 +1,21 @@
+{
+  "name": "back",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Test",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts"
+  },
+  "author": "1ilsang",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "ts-node": "^10.9.1",
+    "models": "*"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.20",
+    "ts-node-dev": "^2.0.0"
+  }
+}

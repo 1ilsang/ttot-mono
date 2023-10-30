@@ -1,9 +1,14 @@
 {
   "name": "ttot",
   "version": "0.0.0",
-  "private": "true",
+  "private": true,
+  "workspaces": [
+    "src/**/*"
+  ],
   "description": "Test",
   "scripts": {
+    "back": "yarn workspace back",
+    "front": "yarn workspace front",
     "lint:eslint": "eslint --ext .ts,.tsx src",
     "lint:prettier": "prettier src --check",
     "lint": "npm-run-all -p lint:*",
