@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-
-const PORT = 3000;
+import { PORT } from 'models';
 
 const app = express();
 app.use(cors('*'));
