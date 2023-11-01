@@ -11,11 +11,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "ts-node": "^10.9.1",
-    "models": "*"
+    "jsonwebtoken": "^9.0.2",
+    "models": "*",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.15",
     "@types/express": "^4.17.20",
+    "@types/jsonwebtoken": "^9.0.4",
     "ts-node-dev": "^2.0.0"
   }
 }
