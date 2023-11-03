@@ -1,13 +1,14 @@
+import { FunctionComponent } from 'react';
+import { PORT } from 'models';
 import {
   ChangeEventHandler,
   KeyboardEventHandler,
   MouseEventHandler,
   useState,
 } from 'react';
-import './App.css';
-import { PORT } from 'models';
+import { Link, Outlet } from 'react-router-dom';
 
-const App = () => {
+const Home: FunctionComponent = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const [token, setToken] = useState('');
@@ -60,8 +61,10 @@ const App = () => {
       <div>
         <button onClick={handleAuthClick}>인증 확인</button>
       </div>
+      <Link to={'board'}>board</Link>
+      <Outlet />
     </div>
   );
 };
 
-export default App;
+export default Home;
