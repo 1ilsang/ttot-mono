@@ -34,6 +34,9 @@ const Home: FunctionComponent = () => {
     setToken(accessToken);
   };
   const handleAuthClick: MouseEventHandler<HTMLButtonElement> = async () => {
+    // document.cookie가 안되는 이유 -> httpOnly 풀었는데도 안되는듯? 확인 필요
+    console.log(document.cookie);
+    document.cookie = 'test=123';
     await fetch(`http://127.0.0.1:${PORT}/verify`, {
       credentials: 'include',
       headers: {

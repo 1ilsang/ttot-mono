@@ -3,7 +3,7 @@ import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import { PORT } from 'models';
 
-const JWT_EXPIRE_TIME = 5;
+const JWT_EXPIRE_TIME = 100;
 const JWT_SECRET = 'ttot';
 
 const app = express();
@@ -19,9 +19,18 @@ app.post('/login', (req, res) => {
   const accessToken = jwt.sign(payload, JWT_SECRET, {
     expiresIn: JWT_EXPIRE_TIME,
   });
+  // TODO: 새로고침 예제 필요함.
+  res.cookie('ttid', accessToken, {
+    // httpOnly: true,
+    secure: true,
+    maxAge: JWT_EXPIRE_TIME * 1000,
+    sameSite: 'none',
+  });
   res.setHeader('Authorization', `bearer ${accessToken}`);
   res.json({ accessToken });
 });
+// TODO: cookie 인증 API 필요.
+// app.get()
 
 app.get('/verify', (req, res) => {
   console.log(`${req.url}:: ${req.headers.authorization}`);
